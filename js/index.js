@@ -46,7 +46,7 @@ signUpButton?.addEventListener("click", function () {
       localStorage.setItem("users", JSON.stringify(allUsers));
       clearinputs();
 
-      setInterval(goToSigninPage, 500);
+      setInterval(goToSigninPage, 1500);
     }
   } else if (checkEmptyINputs() == true) {
     userMessage.innerHTML = "All inputs is required";
