@@ -21,7 +21,7 @@ for (let i = 0; i < allInputFeild.length; i++) {
     if (e.target.value !== "") {
       console.log("hi");
       e.target.classList.remove("bg-transparent");
-
+      e.target.classList.add("text-black");
       e.target.classList.add("bg-white");
     }
   });
