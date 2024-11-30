@@ -19,7 +19,6 @@ let allInputFeild = document.querySelectorAll("input");
 for (let i = 0; i < allInputFeild.length; i++) {
   allInputFeild[i].addEventListener("blur", function (e) {
     if (e.target.value !== "") {
-      console.log("hi");
       e.target.classList.remove("bg-transparent");
       e.target.classList.add("text-black");
       e.target.classList.add("bg-white");
@@ -45,7 +44,9 @@ signUpButton?.addEventListener("click", function () {
 
       allUsers.push(user);
       localStorage.setItem("users", JSON.stringify(allUsers));
-      goToSigninPage();
+      clearinputs();
+
+      setInterval(goToSigninPage, 500);
     }
   } else if (checkEmptyINputs() == true) {
     userMessage.innerHTML = "All inputs is required";
@@ -66,6 +67,14 @@ signInButton?.addEventListener("click", function () {
   }
 });
 
+//~ check if local empty or not
+function checkLocalStorage() {
+  if (localStorage.getItem("users") !== null) {
+    allUsers = JSON.parse(localStorage.getItem("users"));
+  } else {
+    allUsers = [];
+  }
+}
 //~ check if the inputs empty
 function checkEmptyINputs() {
   if (
@@ -86,26 +95,35 @@ function checkEmptyINputs() {
 function exist() {
   for (let i = 0; i < allUsers.length; i++) {
     if (allUsers[i].email === signUPEmail.value) {
-      console.log("used");
       return true; // Return true if a match is found
     }
   }
-  console.log("good");
   return false; // Return false only after checking all users
 }
 
-//~ check if local empty or not
-function checkLocalStorage() {
-  if (localStorage.getItem("users") !== null) {
-    allUsers = JSON.parse(localStorage.getItem("users"));
-  } else {
-    allUsers = [];
-  }
+//~ clear signUp inputs after registration
+function clearinputs() {
+  signUPName.value = "";
+  signUPEmail.value = "";
+  signUpPassword.value = "";
+  removeBackground();
 }
 
+//~ addition function for clear to remove white background after signUp  (not necessary)
+function removeBackground() {
+  if (
+    signUPName.value == "" ||
+    signUPEmail.value == "" ||
+    signUpPassword.value == ""
+  ) {
+    signUPName.classList.add("bg-transparent");
+    signUPEmail.classList.add("bg-transparent");
+    signUpPassword.classList.add("bg-transparent");
+  }
+}
 //? show  Success Message
 function SuccessMessage() {
-  userMessage.innerHTML = "Success";
+  userMessage.innerHTML = "Your signup was successful. Enjoy!";
   userMessage.classList.remove("text-danger", "text-warning");
   userMessage.classList.add("success");
 }
@@ -163,7 +181,6 @@ function checkIsLoginExist() {
       var username = allUsers[i].name;
 
       localStorage.setItem("homeName", JSON.stringify(username));
-      console.log(username);
       return true;
     }
   }
