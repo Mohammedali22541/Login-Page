@@ -1,0 +1,68 @@
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #24353f;
+}
+.card {
+  width: 65%;
+  background-color: #24353f;
+  margin: auto;
+  margin-top: 45px;
+  border-radius: 0;
+  text-align: center;
+  padding: 50px 45px;
+  box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.75);
+}
+.card h1 {
+  color: #17a2b8;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+}
+.card p,
+a {
+  color: #fff;
+  font-family: sans-serif;
+  font-style: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.group-input input::placeholder {
+  color: #fff;
+  opacity: 70%;
+}
+.group-input input:focus {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: sans-serif;
+}
+
+.success {
+  color: #28a745;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.navbar {
+  box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.75);
+}
+nav .navbar h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+section .container .edit {
+  margin: unset;
+  margin-top: 45px;
+  /* box-shadow: 0px 0px 39px 3px rgba(0, 0, 0, 0.75); */
+}
