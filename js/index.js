@@ -23,6 +23,10 @@ for (let i = 0; i < allInputFeild.length; i++) {
       e.target.classList.remove("bg-transparent");
       e.target.classList.add("text-black");
       e.target.classList.add("bg-white");
+    } else if (e.target.value == "") {
+      e.target.classList.add("bg-transparent");
+      e.target.classList.remove("text-black");
+      e.target.classList.remove("bg-white");
     }
   });
 }
